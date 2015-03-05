@@ -152,6 +152,8 @@ module Ebooks
     attr_accessor :conversations
     # @return [Range, Integer] range of seconds to delay in delay method
     attr_accessor :delay_range
+    # @return [String] language of stopwords file
+    attr_accessor :language
 
     # @return [Array] list of all defined bots
     def self.all; @@all ||= []; end
@@ -180,6 +182,7 @@ module Ebooks
 
       @username = username
       @delay_range ||= 1..6
+      @language = "en"
       configure
 
       b.call(self) unless b.nil?

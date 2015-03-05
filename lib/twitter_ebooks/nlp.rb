@@ -16,7 +16,7 @@ module Ebooks
     # Stopwords are common English words that should often be ignored
     # @return [Array<String>]
     def self.stopwords
-      @stopwords ||= File.read(File.join(DATA_PATH, 'stopwords.txt')).split
+      @stopwords ||= File.read(File.join(DATA_PATH, 'stopwords.' + @language + '.txt')).split
     end
 
     # Lazily loads an array of known English nouns
